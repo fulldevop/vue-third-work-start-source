@@ -22,3 +22,11 @@ export const getTimeStatus = dueDate => {
     }
     return timeDelta < 0 ? timeStatuses.DEADLINE : timeStatuses.EXPIRED;
 };
+
+export const normalizeTask = task => {
+    return {
+        ...task,
+        status: task.statusId ? taskStatuses[task.statusId] : '',
+        timeStatus: getTimeStatus(task.dueDate)
+    };
+};
