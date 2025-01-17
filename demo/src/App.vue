@@ -1,6 +1,11 @@
 <template>
   <router-view />
+  <demo-counter />
 </template>
+
+<script setup>
+import DemoCounter from "./DemoCounter.vue";
+</script>
 
 <style>
 * {
